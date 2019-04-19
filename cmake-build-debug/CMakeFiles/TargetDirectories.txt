@@ -1,0 +1,10 @@
+/mnt/hgfs/workProject/learnLinux/cmake-build-debug/CMakeFiles/edit_cache.dir
+/mnt/hgfs/workProject/learnLinux/cmake-build-debug/CMakeFiles/learnLinux.dir
+/mnt/hgfs/workProject/learnLinux/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/mnt/hgfs/workProject/learnLinux/cmake-build-debug/CMakeFiles/learnLinuxSo.dir
+/mnt/hgfs/workProject/learnLinux/cmake-build-debug/src/main/CMakeFiles/rebuild_cache.dir
+/mnt/hgfs/workProject/learnLinux/cmake-build-debug/src/main/CMakeFiles/main.dir
+/mnt/hgfs/workProject/learnLinux/cmake-build-debug/src/main/CMakeFiles/edit_cache.dir
+/mnt/hgfs/workProject/learnLinux/cmake-build-debug/src/easylogging++/CMakeFiles/rebuild_cache.dir
+/mnt/hgfs/workProject/learnLinux/cmake-build-debug/src/easylogging++/CMakeFiles/easylogging++.dir
+/mnt/hgfs/workProject/learnLinux/cmake-build-debug/src/easylogging++/CMakeFiles/edit_cache.dir

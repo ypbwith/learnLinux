@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC  -DELPP_NO_DEFAULT_LOG_FILE -g  -shared -Wl,-soname,liblearnLinuxSo.so -o install/lib/liblearnLinuxSo.so CMakeFiles/learnLinuxSo.dir/src/easylogging++/easylogging++.cc.o -lrt -ldl 
