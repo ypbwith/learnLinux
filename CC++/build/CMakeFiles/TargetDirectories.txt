@@ -1,3 +1,0 @@
-/root/project/CC++/build/CMakeFiles/rebuild_cache.dir
-/root/project/CC++/build/CMakeFiles/cc++.dir
-/root/project/CC++/build/CMakeFiles/edit_cache.dir
