@@ -1,8 +1,11 @@
 #!/bin/sh
 
+mkdir build
+mkdir bin
+
 cd build 
 
-#rm -rf ./*
+rm -rf ./*
 #make clean
 
 #cmake -DCMAKE_TOOLCHAIN_FILE=~./cross.cmake ..
