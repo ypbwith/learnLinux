@@ -1,0 +1,13 @@
+cmake -D CMAKE_BUILD_TYPE=RELEASE \
+-D BUILD_SHARED_LIBS=OFF \
+-D CMAKE_INSTALL_PREFIX=/root/data/learn/learnLinux/lib/libopencv \
+-D INSTALL_C_EXAMPLES=OFF \
+-D INSTALL_PYTHON_EXAMPLES=OFF \
+-D WITH_OPENGL=ON \
+-D BUILD_PERF_TESTS=OFF \
+-D BUILD_TESTS=OFF \
+-D WITH_CUDA=OFF \
+-D BUILD_opencv_python3=OFF \
+-D BUILD_opencv_python2=OFF \
+-D OPENCV_EXTRA_MODULES_PATH=/root/data/learn/learnLinux/lib/opencv_contrib-4.1.0/modules \
+-D BUILD_EXAMPLES=OFF ..

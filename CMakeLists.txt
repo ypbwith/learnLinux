@@ -15,11 +15,16 @@ include_directories(
           src
           src/main
           src/easylogging++
+          src/opencv
+          lib/libopencv/include
+          lib/libopencv/include/opencv4
+          lib/libopencv/include/opencv4/opencv2
 )
 
 link_libraries(
       rt
       dl
+      ${CMAKE_HOME_DIRECTORY}/lib/libopencv/
 #      /root/data/hi3536/Hi3536_SDK_V2.0.2.0/mpp_master/lib/libmpi.a
      
 )
