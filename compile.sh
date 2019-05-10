@@ -11,7 +11,7 @@ rm -rf ./*
 #cmake -DCMAKE_TOOLCHAIN_FILE=~./cross.cmake ..
 cmake ..
 
-make -j4
+make
 
 make install
 
