@@ -1,1 +1,0 @@
-/usr/bin/c++   -DELPP_NO_DEFAULT_LOG_FILE -g   CMakeFiles/learnLinux.dir/src/main/main.cpp.o CMakeFiles/learnLinux.dir/src/easylogging++/easylogging++.cc.o  -o install/bin/learnLinux -lrt -ldl install/lib/libmain.a -ldl -lm -lrt -ldl 
