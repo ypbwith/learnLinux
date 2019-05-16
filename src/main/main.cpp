@@ -16,7 +16,7 @@ int main(int argc,char **argv)
     el::Loggers::reconfigureAllLoggers(conf);
     // Now all the loggers will use configuration from file
 
-    string rtspPath = "rtsp://admin:hi35363536@192.168.3.10/h264/ch1/main/av_stream";
+    string rtspPath = "rtsp://admin:hi35363536@192.168.3.10/h264/ch1/sub/av_stream";
     videoProcess video;
 
     video.videoInThreadCreat(rtspPath);

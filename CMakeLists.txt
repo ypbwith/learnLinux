@@ -39,18 +39,24 @@ include_directories(
           src/main
           src/easylogging++
           src/opencv
-          lib/libopencv/include
-          lib/libopencv/include/opencv4
-          lib/libopencv/include/opencv4/opencv2
+          /root/lib/libopencv/include
+          /root/lib/libopencv/include/opencv4
+          /root/lib/libopencv/include/opencv4/opencv2
 )
 
 link_libraries(
       rt
       dl
-      ${CMAKE_HOME_DIRECTORY}/lib/libopencv/libopencv_core.so
-      ${CMAKE_HOME_DIRECTORY}/lib/libopencv/libopencv_highgui.so
-      ${CMAKE_HOME_DIRECTORY}/lib/libopencv/libopencv_imgproc.so
+
+     /root/lib/libopencv/lib/libopencv_core.so
+     /root/lib/libopencv/lib/libopencv_video.so
+     /root/lib/libopencv/lib/libopencv_videoio.so
+     /root/lib/libopencv/lib/libopencv_videostab.so
+     /root/lib/libopencv/lib/libopencv_imgproc.so
+     /root/lib/libopencv/lib/libopencv_highgui.so
+
 #      /root/data/hi3536/Hi3536_SDK_V2.0.2.0/mpp_master/lib/libmpi.a
+#     ${CMAKE_HOME_DIRECTORY}/lib/libopencv/libopencv_imgproc.so
 )
 
 add_subdirectory(src/main)

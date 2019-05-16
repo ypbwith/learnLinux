@@ -84,7 +84,7 @@ void *videoProcess::videoInThread(void *param)
         // show live and wait for a key with timeout long enough to show images
         imshow("Live", pThis->videoIn);
 
-        if (waitKey(5) >= 0)
+        if (waitKey(27) >= 0)
             break;
     }
 }
