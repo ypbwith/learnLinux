@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.5)
 
 set (CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 
 project (learnLinux)
 
@@ -9,7 +10,7 @@ set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/install/lib)
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/install/bin)
 
 SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DELPP_NO_DEFAULT_LOG_FILE")
-
+SET(OpenCV_DIR /root/lib/libopencv/lib/cmake/opencv4)
 find_package(OpenCV REQUIRED)
 
 message(STATUS "OpenCV library status:")
@@ -47,16 +48,13 @@ include_directories(
 link_libraries(
       rt
       dl
-
-     /root/lib/libopencv/lib/libopencv_core.so
-     /root/lib/libopencv/lib/libopencv_video.so
-     /root/lib/libopencv/lib/libopencv_videoio.so
-     /root/lib/libopencv/lib/libopencv_videostab.so
-     /root/lib/libopencv/lib/libopencv_imgproc.so
-     /root/lib/libopencv/lib/libopencv_highgui.so
-
-#      /root/data/hi3536/Hi3536_SDK_V2.0.2.0/mpp_master/lib/libmpi.a
-#     ${CMAKE_HOME_DIRECTORY}/lib/libopencv/libopencv_imgproc.so
+      /root/lib/libopencv/lib/libopencv_core.so
+      /root/lib/libopencv/lib/libopencv_video.so
+      /root/lib/libopencv/lib/libopencv_videoio.so
+      /root/lib/libopencv/lib/libopencv_videostab.so
+      /root/lib/libopencv/lib/libopencv_imgproc.so
+      /root/lib/libopencv/lib/libopencv_highgui.so
+#      ${CMAKE_HOME_DIRECTORY}/lib
 )
 
 add_subdirectory(src/main)

@@ -36,6 +36,24 @@ int videoProcess::videoInThreadCreat()
     pthread_detach(videoInThreadPt);
 }
 
+int videoProcess::videoPlayThreadCreat()
+{
+    int temp;
+
+    if((temp = pthread_create(&videoPlayThreadPt, NULL, videoPlayThread , this)) != 0)
+    {
+        printf("videoPlayThreadCreat failure !\n");
+    }
+    else
+    {
+//        threadState = 1;
+        printf("videoPlayThreadCreat success !\n");
+    }
+
+    pthread_detach(videoPlayThreadPt);
+}
+
+
 int videoProcess::videoInThreadCreat(string rtspPath)
 {
     this->cap = new VideoCapture(rtspPath.c_str());
@@ -79,12 +97,47 @@ void *videoProcess::videoInThread(void *param)
 
     for (;;)
     {
-        *pThis->cap >> pThis->videoIn;
+        try
+        {
+            *pThis->cap >> pThis->videoIn;
 
-        // show live and wait for a key with timeout long enough to show images
-        imshow("Live", pThis->videoIn);
+             pThis->videoQueue.push(pThis->videoIn);
+        }
+        catch (...)
+        {
 
-        if (waitKey(27) >= 0)
-            break;
+        }
+       
+    }
+}
+
+void *videoProcess::videoPlayThread(void *param)
+{
+    printf("[ == I am videoPlayThread thread! == ]\n\n");
+
+    videoProcess *pThis = (videoProcess*)param;
+
+    for (;;)
+    {
+        try
+        {
+            if(!pThis->videoQueue.empty())
+            {
+                imshow("Live", pThis->videoQueue.front());
+                pThis->videoQueue.pop();
+
+                static long tmp = 0;
+
+                cout << "==:" << tmp++ << endl ;
+
+                if (waitKey(15) >= 0)
+                break;
+            }
+        }
+        catch (...)
+        {
+
+        }
+       
     }
 }

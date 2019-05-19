@@ -11,7 +11,7 @@ cd build
 #cmake -DCMAKE_TOOLCHAIN_FILE=~./cross.cmake ..
 cmake ..
 
-make
+make -j4
 
 make install
 

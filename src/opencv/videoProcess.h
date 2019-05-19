@@ -10,6 +10,7 @@
 #include <opencv2/highgui.hpp>
 #include <iostream>
 #include <stdio.h>
+#include <queue> 
 
 using namespace cv;
 using namespace std;
@@ -26,15 +27,19 @@ public:
     VideoCapture * cap;
     string rtspPath;
 
+    std::queue<Mat> videoQueue;
+
     pthread_t videoInThreadPt;
+    pthread_t videoPlayThreadPt;
 
     int videoInThreadCreat();
 
+    int videoPlayThreadCreat();
     int videoInThreadCreat(int capChNum);
-
     int videoInThreadCreat(string rtspPath);
 
     static void *videoInThread( void *param);
+    static void *videoPlayThread( void *param);
 
 };
 
