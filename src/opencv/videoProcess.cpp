@@ -36,11 +36,11 @@ int videoProcess::videoInThreadCreat()
     pthread_detach(videoInThreadPt);
 }
 
-int videoProcess::videoPlayThreadCreat()
+int videoProcess::videoProcThreadCreat()
 {
     int temp;
 
-    if((temp = pthread_create(&videoPlayThreadPt, NULL, videoPlayThread , this)) != 0)
+    if((temp = pthread_create(&videoProcThreadPt, NULL, videoProcThread , this)) != 0)
     {
         printf("videoPlayThreadCreat failure !\n");
     }
@@ -50,7 +50,7 @@ int videoProcess::videoPlayThreadCreat()
         printf("videoPlayThreadCreat success !\n");
     }
 
-    pthread_detach(videoPlayThreadPt);
+    pthread_detach(videoProcThreadPt);
 }
 
 
@@ -101,7 +101,15 @@ void *videoProcess::videoInThread(void *param)
         {
             *pThis->cap >> pThis->videoIn;
 
-             pThis->videoQueue.push(pThis->videoIn);
+            if (pThis->videoIn.empty())
+                continue;
+
+//            pThis->videoQueue.push(pThis->videoIn);
+
+            imshow("Live0",pThis->videoIn);
+
+            if (waitKey(27) >= 0)
+                break;
         }
         catch (...)
         {
@@ -111,7 +119,7 @@ void *videoProcess::videoInThread(void *param)
     }
 }
 
-void *videoProcess::videoPlayThread(void *param)
+void *videoProcess::videoProcThread(void *param)
 {
     printf("[ == I am videoPlayThread thread! == ]\n\n");
 
@@ -123,15 +131,15 @@ void *videoProcess::videoPlayThread(void *param)
         {
             if(!pThis->videoQueue.empty())
             {
-                imshow("Live", pThis->videoQueue.front());
-                pThis->videoQueue.pop();
+//                imshow("Live", pThis->videoQueue.front());
+//                pThis->videoQueue.pop();
 
-                static long tmp = 0;
-
-                cout << "==:" << tmp++ << endl ;
-
-                if (waitKey(15) >= 0)
-                break;
+//                static long tmp = 0;
+//
+//                cout << ":)" << tmp++ << endl ;
+//
+//                if (waitKey(27) >= 0)
+//                    continue;
             }
         }
         catch (...)

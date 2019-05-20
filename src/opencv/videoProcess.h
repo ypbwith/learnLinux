@@ -30,16 +30,16 @@ public:
     std::queue<Mat> videoQueue;
 
     pthread_t videoInThreadPt;
-    pthread_t videoPlayThreadPt;
+    pthread_t videoProcThreadPt;
 
     int videoInThreadCreat();
 
-    int videoPlayThreadCreat();
+    int videoProcThreadCreat();
     int videoInThreadCreat(int capChNum);
     int videoInThreadCreat(string rtspPath);
 
     static void *videoInThread( void *param);
-    static void *videoPlayThread( void *param);
+    static void *videoProcThread( void *param);
 
 };
 
