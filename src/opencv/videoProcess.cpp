@@ -110,6 +110,7 @@ void *videoProcess::videoInThread(void *param)
 
             if (waitKey(27) >= 0)
                 break;
+
         }
         catch (...)
         {
@@ -134,12 +135,19 @@ void *videoProcess::videoProcThread(void *param)
 //                imshow("Live", pThis->videoQueue.front());
 //                pThis->videoQueue.pop();
 
+
+//                cout << "==:" << tmp++ << endl ;
+
+//                if (waitKey(27) >= 0)
+//                break;
+
 //                static long tmp = 0;
 //
 //                cout << ":)" << tmp++ << endl ;
 //
 //                if (waitKey(27) >= 0)
 //                    continue;
+
             }
         }
         catch (...)

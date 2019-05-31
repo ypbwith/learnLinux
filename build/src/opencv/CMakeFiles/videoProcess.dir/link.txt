@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../install/lib/libvideoProcess.a  CMakeFiles/videoProcess.dir/videoProcess.cpp.o
+/usr/bin/ranlib ../../install/lib/libvideoProcess.a
