@@ -26,6 +26,8 @@ public:
     Mat videoIn;
     VideoCapture * cap;
     string rtspPath;
+    int videoBufSize;
+    int videoBufCnt;
 
     std::queue<Mat> videoQueue;
 

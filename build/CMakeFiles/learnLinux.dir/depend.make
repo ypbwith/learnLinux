@@ -4,8 +4,6 @@
 CMakeFiles/learnLinux.dir/src/easylogging++/easylogging++.cc.o: ../src/easylogging++/easylogging++.cc
 CMakeFiles/learnLinux.dir/src/easylogging++/easylogging++.cc.o: ../src/easylogging++/easylogging++.h
 
-CMakeFiles/learnLinux.dir/src/main/main.cpp.o: ../src/easylogging++/easylogging++.h
-CMakeFiles/learnLinux.dir/src/main/main.cpp.o: ../src/opencv/videoProcess.h
 CMakeFiles/learnLinux.dir/src/main/main.cpp.o: /root/lib/libopencv/include/opencv4/opencv2/calib3d.hpp
 CMakeFiles/learnLinux.dir/src/main/main.cpp.o: /root/lib/libopencv/include/opencv4/opencv2/core.hpp
 CMakeFiles/learnLinux.dir/src/main/main.cpp.o: /root/lib/libopencv/include/opencv4/opencv2/core/affine.hpp

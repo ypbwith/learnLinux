@@ -12,6 +12,8 @@ videoProcess::videoProcess()
 videoProcess::videoProcess(string rtspPath)
 {
     this->rtspPath = rtspPath;
+    videoBufSize = 100;
+    videoBufCnt = 0;
 }
 
 videoProcess::~videoProcess()
@@ -104,11 +106,11 @@ void *videoProcess::videoInThread(void *param)
             if (pThis->videoIn.empty())
                 continue;
 
-//            pThis->videoQueue.push(pThis->videoIn);
+            // pThis->videoQueue.push(pThis->videoIn);
 
             imshow("Live0",pThis->videoIn);
 
-            if (waitKey(27) >= 0)
+            if (waitKey(1) >= 0)
                 break;
 
         }
@@ -130,23 +132,11 @@ void *videoProcess::videoProcThread(void *param)
     {
         try
         {
-            if(!pThis->videoQueue.empty())
+            if(!pThis->videoQueue.empty() && (pThis->videoBufCnt >= 1000))
             {
-//                imshow("Live", pThis->videoQueue.front());
-//                pThis->videoQueue.pop();
+            //    imshow("Live", pThis->videoQueue.front());
+            //    pThis->videoQueue.pop();
 
-
-//                cout << "==:" << tmp++ << endl ;
-
-//                if (waitKey(27) >= 0)
-//                break;
-
-//                static long tmp = 0;
-//
-//                cout << ":)" << tmp++ << endl ;
-//
-//                if (waitKey(27) >= 0)
-//                    continue;
 
             }
         }
